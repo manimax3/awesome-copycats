@@ -18,17 +18,17 @@ local theme                                     = {}
 theme.default_dir                               = require("awful.util").get_themes_dir() .. "default"
 theme.icon_dir                                  = os.getenv("HOME") .. "/.config/awesome/themes/holo/icons"
 theme.wallpaper                                 = os.getenv("HOME") .. "/.config/awesome/themes/holo/wall.png"
-theme.font                                      = "Roboto Bold 10"
-theme.taglist_font                              = "Roboto Condensed Regular 8"
+theme.font                                      = "Hack 9"
+theme.taglist_font                              = "Hack 8"
 theme.fg_normal                                 = "#FFFFFF"
 theme.fg_focus                                  = "#0099CC"
 theme.bg_focus                                  = "#303030"
 theme.bg_normal                                 = "#242424"
 theme.fg_urgent                                 = "#CC9393"
 theme.bg_urgent                                 = "#006B8E"
-theme.border_width                              = 3
+theme.border_width                              = 2
 theme.border_normal                             = "#252525"
-theme.border_focus                              = "#0099CC"
+theme.border_focus                              = "#9CD2FF"
 theme.taglist_fg_focus                          = "#FFFFFF"
 theme.tasklist_bg_normal                        = "#222222"
 theme.tasklist_fg_focus                         = "#4CB7DB"
@@ -339,35 +339,19 @@ function theme.at_screen_connect(s)
             wibox.widget.systray(),
             --mail.widget,
             --bat.widget,
-            spr_right,
-            musicwidget,
-            bar,
-            prev_icon,
-            next_icon,
-            stop_icon,
-            play_pause_icon,
-            bar,
-            mpd_icon,
-            bar,
-            spr_very_small,
-            volumewidget,
-            spr_left,
-        },
-    }
-
-    -- Create the bottom wibox
-    s.mybottomwibox = awful.wibar({ position = "bottom", screen = s, border_width = 0, height = 32 })
-    s.borderwibox = awful.wibar({ position = "bottom", screen = s, height = 1, bg = theme.fg_focus, x = 0, y = 33})
-
-    -- Add widgets to the bottom wibox
-    s.mybottomwibox:setup {
-        layout = wibox.layout.align.horizontal,
-        { -- Left widgets
-            layout = wibox.layout.fixed.horizontal,
-            mylauncher,
-        },
-        s.mytasklist, -- Middle widget
-        { -- Right widgets
+            -- spr_right,
+            -- musicwidget,
+            -- bar,
+            -- prev_icon,
+            -- next_icon,
+            -- stop_icon,
+            -- play_pause_icon,
+            -- bar,
+            -- mpd_icon,
+            -- bar,
+            -- spr_very_small,
+            -- volumewidget,
+            -- spr_left,
             layout = wibox.layout.fixed.horizontal,
             spr_bottom_right,
             netdown_icon,
@@ -384,6 +368,36 @@ function theme.at_screen_connect(s)
             clockwidget,
         },
     }
+
+    -- Create the bottom wibox
+    -- s.mybottomwibox = awful.wibar({ position = "bottom", screen = s, border_width = 0, height = 32 })
+    -- s.borderwibox = awful.wibar({ position = "bottom", screen = s, height = 1, bg = theme.fg_focus, x = 0, y = 33})
+
+    -- Add widgets to the bottom wibox
+    -- s.mybottomwibox:setup {
+    --     layout = wibox.layout.align.horizontal,
+    --     { -- Left widgets
+    --         layout = wibox.layout.fixed.horizontal,
+    --         mylauncher,
+    --     },
+    --     s.mytasklist, -- Middle widget
+    --     { -- Right widgets
+    --         layout = wibox.layout.fixed.horizontal,
+    --         -- spr_bottom_right,
+    --         -- netdown_icon,
+    --         -- networkwidget,
+    --         -- netup_icon,
+    --         -- bottom_bar,
+    --         -- cpu_icon,
+    --         -- cpuwidget,
+    --         -- bottom_bar,
+    --         -- calendar_icon,
+    --         -- calendarwidget,
+    --         -- bottom_bar,
+    --         -- clock_icon,
+    --         -- clockwidget,
+    --     },
+    -- }
 end
 
 return theme
